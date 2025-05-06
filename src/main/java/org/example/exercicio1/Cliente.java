@@ -9,18 +9,24 @@ import java.util.List;
     RESPOSTA:
 
 */
-public class Cliente {
+public class Cliente { /*A classe cliente estava responsável pelo valor das compras, o que vai contra o princípio Especialista da Informação, agora refatorado
+    Cliente apenas recebe as compras e quem fica responsável pelo valor de cada compra é a classe Compra*/
 
     private String nome;
     private String cpf;
     private String dataCompra;
-    private List<Double> valoresCompras;
+    private List<Compra> compras;
 
-    public double calculaTotalCompras() {
+    public void adicionarCompra(Compra compra){
+        compras.add(compra);
+    }
+
+    public double CalcularCompras(){
         double total = 0;
-        for (double valor : valoresCompras) {
-            total += valor;
+        for (Compra compra : compras ){
+            total = compra.getValorTotal();
         }
+
         return total;
     }
 }
