@@ -12,25 +12,17 @@ import java.sql.SQLException;
 
     RESPOSTA:
 
+    A classe Pedido estava fazendo coisas que não deveria, como validar os dados e se preocupar com a persistência no banco.
+    Isso acabou deixando a classe muito "pesada", difícil de manter e testar. Essas tarefas de validação e persistência deviam
+    estar em outras classes, para deixar tudo mais organizado. Então, para aplicar o princípio de Baixo Acoplamento, separei as
+    responsabilidades em três partes: a classe Pedido só fica com os dados (o modelo), o PedidoDAO cuida de salvar esses dados no
+    banco e o PedidoService faz toda a parte de validação e regras de negócio.
+
 */
 public class Pedido {
 
     private int id;
     private String descricao;
-
-    public void salvaPedido(Pedido pedido) {
-
-        //Lógica de validação dos dados do pedido
-        System.out.println("Validando dados do pedido " + pedido.getId());
-
-        // Lógica de conexão com banco de dados
-        System.out.println("Criando conexão com banco de dados");
-
-        // Lógica de persistência
-        System.out.println("Preparando dados para persistência.");
-        System.out.println("Dados salvos no banco.");
-
-    }
 
     public int getId() {
         return id;

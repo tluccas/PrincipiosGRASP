@@ -8,7 +8,8 @@ package org.example.exercicio2;
 
     A classe usuario original está responsavel por métodos que não cabem a ela estar responsável(ela sendo Model) que no caso são responsáveis por
     fazer a conexão entre a interface e o Banco de dados ou local de armazenamento o que é dever do Controller ao seguir o principío do Controlador, sem contar
-    que os métodos apresentam a falta de validações como no caso do login, a falta de parametros no criarUsuario e no deletarUsuario.
+    que os métodos apresentam a falta de validações como no caso do login, a falta de parametros no criarUsuario e no deletarUsuario. Criei os métodos dentro do
+    Controller para fazer a ponte entre DAO e interface seguindo o principio do Controller além de adicionar as validações dentro do mesmo.
 
 */
 public class Usuario {
@@ -36,13 +37,6 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
-    public void criaUsuario(){
-
-    }
-    public void deletaUsuario(){}
-
 
 
 
