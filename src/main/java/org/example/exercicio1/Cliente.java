@@ -6,11 +6,11 @@ import java.util.List;
     Explique os problemas encontrados e o que foi feito para adequar
     o código existente ao princípio.
 
-    RESPOSTA:
+    RESPOSTA: A classe cliente estava responsável pelo valor das compras, o que vai contra o princípio Especialista da Informação, agora refatorado
+    Cliente apenas recebe as compras e quem fica responsável pelo valor de cada compra é a classe Compra
 
 */
-public class Cliente { /*A classe cliente estava responsável pelo valor das compras, o que vai contra o princípio Especialista da Informação, agora refatorado
-    Cliente apenas recebe as compras e quem fica responsável pelo valor de cada compra é a classe Compra*/
+public class Cliente {
 
     private String nome;
     private String cpf;

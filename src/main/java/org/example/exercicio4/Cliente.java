@@ -5,6 +5,10 @@ package org.example.exercicio4;
     o código ao princípio.
 
     RESPOSTA:
+    A classe Cliente acumulava múltiplas responsabilidades: representação de dados,
+    persistência e envio de e-mail, violando o princípio da Alta Coesão. Para corrigir,
+    a lógica foi distribuída entre classes especializadas (ClienteRepository, EmailService
+    e ClienteService), mantendo cada classe com uma única responsabilidade.
 */
 public class Cliente {
 
@@ -17,18 +21,6 @@ public class Cliente {
     public Cliente(String nome, String email) {
         this.nome = nome;
         this.email = email;
-    }
-
-    public void cadastraCliente(Cliente cliente){
-
-        //Lógica de validação dos dados do cliente
-        System.out.println("Cadastrando o cliente " + cliente.getNome());
-
-        // Lógica de persistência
-        System.out.println("Dados salvos no banco.");
-
-        // Lógica de envio de e-mail
-        System.out.println("Enviando e-mail de boas-vindas para " + cliente.getEmail());
     }
 
     public String getNome() {
